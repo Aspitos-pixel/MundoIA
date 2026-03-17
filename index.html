@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO: Palabras clave estratégicas -->
-    <title>IA Match | La mejor IA para escribir, diseñar y programar</title>
-    <meta name="description" content="Descubre cuál es la mejor IA para cada ocasión. Directorio con enlaces oficiales a ChatGPT, Claude, Midjourney y más herramientas de inteligencia artificial.">
-    <meta name="keywords" content="mejor IA para, directorio de IA, enlaces oficiales chatgpt, mejores herramientas inteligencia artificial 2026">
+    <title>IAMUNDO | Guía y Directorio de Inteligencia Artificial 2026</title>
+    <meta name="description" content="Directorio especializado en IA. Análisis profundo sobre la mejor IA para cada sector y enlaces oficiales a herramientas líderes.">
     
-    <!-- Tailwind CSS para el diseño -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide para los iconos -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Fuente moderna -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <script>
@@ -21,192 +16,110 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
-                    colors: {
-                        dark: '#050a15',
-                        card: '#0f172a',
-                        accent: '#6366f1',
-                    }
+                    colors: { dark: '#050a15', card: '#0f172a', accent: '#6366f1' }
                 }
             }
         }
     </script>
     <style>
         body { background-color: #050a15; color: #f8fafc; scroll-behavior: smooth; }
-        .ai-card.hidden-filter { display: none !important; }
         .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .category-pill.active { background-color: #6366f1; color: white; border-color: #6366f1; }
-        
-        .gradient-border {
-            position: relative;
-            border-radius: 1rem;
-            background: rgba(15, 23, 42, 1);
-            padding: 1px;
-            transition: all 0.3s ease;
-        }
-        .gradient-border:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.4);
-        }
-        .gradient-border::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 1rem;
-            padding: 1px;
-            background: linear-gradient(45deg, #6366f1, #a855f7, #ec4899);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0.2;
-            transition: opacity 0.3s;
-        }
-        .gradient-border:hover::before { opacity: 1; }
+        .gradient-border { position: relative; border-radius: 1rem; background: rgba(15, 23, 42, 1); padding: 1px; transition: all 0.3s ease; }
+        .gradient-border:hover { transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.4); }
+        .hidden-filter { display: none !important; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- Navegación con Buscador -->
     <nav class="glass sticky top-0 z-50 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="bg-accent p-2 rounded-lg">
-                    <i data-lucide="zap" class="text-white w-5 h-5"></i>
-                </div>
+                <div class="bg-accent p-2 rounded-lg"><i data-lucide="zap" class="text-white w-5 h-5"></i></div>
                 <span class="text-xl font-extrabold tracking-tight">IA<span class="text-accent">MUNDO</span></span>
             </div>
             
-            <div class="relative hidden md:block w-96">
-                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 w-4 h-4"></i>
-                <input type="text" id="searchBar" placeholder="Ej: mejor IA para diseñar..." 
-                       class="w-full bg-slate-900 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-accent transition text-white">
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#inicio" class="hover:text-white transition">Inicio</a>
+                <a href="#articulos" class="hover:text-white transition">Análisis</a>
+                <a href="#" onclick="toggleModal('privacidad')" class="hover:text-white transition font-bold text-accent">Privacidad</a>
+                <a href="#" onclick="toggleModal('contacto')" class="hover:text-white transition">Contacto</a>
             </div>
 
-            <div class="hidden sm:block">
-                <button class="bg-white text-dark px-6 py-2 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition shadow-lg">Actualizado 2026</button>
+            <div class="relative hidden lg:block w-64">
+                <input type="text" id="searchBar" placeholder="Buscar IA..." 
+                       class="w-full bg-slate-900 border border-white/10 rounded-full py-2 px-4 text-xs focus:outline-none focus:border-accent transition text-white text-center">
             </div>
         </div>
     </nav>
 
-    <!-- Sección Hero SEO -->
-    <header class="py-20 px-6 text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-            ¿Cuál es la <span class="text-accent italic">mejor IA para</span> ti?
+    <header id="inicio" class="py-20 px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight italic">
+            El Futuro de la <span class="text-accent not-italic">Inteligencia Artificial</span>
         </h1>
-        <p class="text-slate-400 max-w-2xl mx-auto text-lg mb-4">
-            Directorio profesional con enlaces directos a las herramientas más potentes.
+        <p class="text-slate-400 max-w-2xl mx-auto text-lg mb-8 leading-relaxed">
+            Bienvenido a <strong>IAMUNDO</strong>. En el ecosistema tecnológico de 2026, seleccionar la herramienta adecuada no es solo una opción, es una necesidad competitiva. Analizamos las plataformas líderes para potenciar tu flujo de trabajo.
         </p>
-        <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Haz clic en una tarjeta para visitar el sitio oficial</p>
     </header>
 
-    <!-- Filtros de Categoría -->
-    <div class="max-w-7xl mx-auto px-6 mb-12 overflow-x-auto no-scrollbar">
-        <div class="flex md:justify-center gap-2 pb-4" id="category-container">
-            <button data-cat="all" class="category-pill active px-5 py-2.5 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap">Todas</button>
-            <button data-cat="texto" class="category-pill px-5 py-2.5 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Mejor IA para Texto</button>
-            <button data-cat="imagen" class="category-pill px-5 py-2.5 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Mejor IA para Imagen</button>
-            <button data-cat="video" class="category-pill px-5 py-2.5 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Video</button>
-            <button data-cat="codigo" class="category-pill px-5 py-2.5 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Programación</button>
-            <button data-cat="investigacion" class="category-pill px-5 py-2.5 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Búsqueda</button>
+    <section id="articulos" class="max-w-4xl mx-auto px-6 mb-20">
+        <div class="bg-slate-900/50 p-8 rounded-3xl border border-white/5 space-y-8">
+            <article>
+                <h2 class="text-2xl font-bold text-white mb-4">La Evolución de los Modelos de Lenguaje en 2026</h2>
+                <p class="text-slate-400 leading-relaxed italic">
+                    La inteligencia artificial ha dejado de ser un simple chat para convertirse en sistemas de razonamiento autónomo. Herramientas como ChatGPT y Claude 3.5 han redefinido la productividad, permitiendo a los profesionales automatizar tareas complejas de análisis de datos y creación de contenido con una precisión superior al 98% en contextos técnicos.
+                </p>
+            </article>
+            <article>
+                <h2 class="text-2xl font-bold text-white mb-4">Creatividad Visual y Generación de Vídeo</h2>
+                <p class="text-slate-400 leading-relaxed">
+                    El impacto de la IA en el diseño gráfico y la cinematografía es innegable. Con la llegada de modelos de vídeo de alta fidelidad, la barrera de entrada para la producción audiovisual se ha reducido drásticamente. Midjourney y Runway lideran un mercado donde la idea original tiene más peso que el equipo técnico disponible.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-6 mb-12">
+        <div class="flex flex-wrap justify-center gap-3" id="category-container">
+            <button data-cat="all" class="category-pill active px-6 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest transition">Todas</button>
+            <button data-cat="texto" class="category-pill px-6 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest transition">Texto</button>
+            <button data-cat="imagen" class="category-pill px-6 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest transition">Imagen</button>
+            <button data-cat="codigo" class="category-pill px-6 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest transition">Programación</button>
         </div>
     </div>
 
-    <!-- Grid de Herramientas -->
-    <main class="max-w-7xl mx-auto px-6 pb-32 w-full">
+    <main class="max-w-7xl mx-auto px-6 pb-20 w-full flex-grow">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="ai-grid">
             
-            <!-- ChatGPT -->
             <a href="https://chat.openai.com" target="_blank" class="ai-card gradient-border block" data-category="texto" data-title="ChatGPT">
                 <div class="p-8 h-full flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-2xl"><i data-lucide="message-circle" class="w-6 h-6"></i></div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-slate-600"></i>
-                    </div>
+                    <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-2xl w-fit mb-6"><i data-lucide="message-circle" class="w-6 h-6"></i></div>
                     <h3 class="text-2xl font-bold mb-3">ChatGPT</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">Considerada la <strong>mejor IA para</strong> escribir correos, resumir textos y resolver dudas generales de forma rápida.</p>
-                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span class="text-accent text-xs font-black tracking-widest uppercase">Visitar Sitio</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-accent"></i>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed italic text-justify">La mejor IA para la generación de textos estructurados, correos corporativos y asistencia en tiempo real.</p>
+                    <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-accent text-xs font-black uppercase tracking-widest">
+                        <span>Visitar Oficial</span> <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                     </div>
                 </div>
             </a>
 
-            <!-- Midjourney -->
             <a href="https://www.midjourney.com" target="_blank" class="ai-card gradient-border block" data-category="imagen" data-title="Midjourney">
                 <div class="p-8 h-full flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-purple-500/10 text-purple-400 rounded-2xl"><i data-lucide="palette" class="w-6 h-6"></i></div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-slate-600"></i>
-                    </div>
+                    <div class="p-3 bg-purple-500/10 text-purple-400 rounded-2xl w-fit mb-6"><i data-lucide="palette" class="w-6 h-6"></i></div>
                     <h3 class="text-2xl font-bold mb-3">Midjourney</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">La <strong>mejor IA para</strong> crear arte digital asombroso, logos e imágenes fotorrealistas de alta resolución.</p>
-                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span class="text-accent text-xs font-black tracking-widest uppercase">Visitar Sitio</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-accent"></i>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed italic text-justify">Herramienta líder en generación de imágenes fotorrealistas y arte conceptual de alta gama.</p>
+                    <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-accent text-xs font-black uppercase tracking-widest">
+                        <span>Visitar Oficial</span> <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                     </div>
                 </div>
             </a>
 
-            <!-- Claude -->
-            <a href="https://claude.ai" target="_blank" class="ai-card gradient-border block" data-category="texto codigo" data-title="Claude">
-                <div class="p-8 h-full flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-orange-500/10 text-orange-400 rounded-2xl"><i data-lucide="brain" class="w-6 h-6"></i></div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-slate-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Claude 3.5</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">Probablemente la <strong>mejor IA para</strong> programar, analizar archivos extensos y escribir con un tono muy humano.</p>
-                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span class="text-accent text-xs font-black tracking-widest uppercase">Visitar Sitio</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-accent"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Perplexity -->
-            <a href="https://www.perplexity.ai" target="_blank" class="ai-card gradient-border block" data-category="investigacion" data-title="Perplexity">
-                <div class="p-8 h-full flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-blue-500/10 text-blue-400 rounded-2xl"><i data-lucide="search" class="w-6 h-6"></i></div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-slate-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Perplexity</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">La <strong>mejor IA para</strong> buscar en internet. Te da respuestas directas con enlaces reales a las fuentes.</p>
-                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span class="text-accent text-xs font-black tracking-widest uppercase">Visitar Sitio</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-accent"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Runway -->
-            <a href="https://runwayml.com" target="_blank" class="ai-card gradient-border block" data-category="video" data-title="Runway">
-                <div class="p-8 h-full flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-rose-500/10 text-rose-400 rounded-2xl"><i data-lucide="film" class="w-6 h-6"></i></div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-slate-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Runway Gen-3</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">La <strong>mejor IA para</strong> generar video cinematográfico a partir de texto. Ideal para creadores de contenido.</p>
-                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span class="text-accent text-xs font-black tracking-widest uppercase">Visitar Sitio</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-accent"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cursor -->
             <a href="https://cursor.sh" target="_blank" class="ai-card gradient-border block" data-category="codigo" data-title="Cursor">
                 <div class="p-8 h-full flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-2xl"><i data-lucide="terminal" class="w-6 h-6"></i></div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-slate-600"></i>
-                    </div>
+                    <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-2xl w-fit mb-6"><i data-lucide="terminal" class="w-6 h-6"></i></div>
                     <h3 class="text-2xl font-bold mb-3">Cursor AI</h3>
-                    <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">Actualmente la <strong>mejor IA para</strong> desarrollar software. Entiende toda tu carpeta de código de golpe.</p>
-                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span class="text-accent text-xs font-black tracking-widest uppercase">Visitar Sitio</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-accent"></i>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed italic text-justify">El editor de código preferido por desarrolladores en 2026 para integración fluida de IA.</p>
+                    <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-accent text-xs font-black uppercase tracking-widest">
+                        <span>Visitar Oficial</span> <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                     </div>
                 </div>
             </a>
@@ -214,18 +127,28 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="mt-auto border-t border-white/5 py-12 glass">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-slate-500 text-sm mb-2 font-bold tracking-widest uppercase">IAMUNDO 2026</p>
-            <p class="text-slate-600 text-xs">Tu guía oficial de enlaces de Inteligencia Artificial.</p>
+            <p class="text-slate-500 text-sm mb-4 font-bold tracking-widest uppercase">IAMUNDO &copy; 2026</p>
+            <div class="flex justify-center gap-6 text-xs text-slate-400 uppercase tracking-widest">
+                <a href="#" onclick="toggleModal('privacidad')" class="hover:text-accent">Privacidad</a>
+                <a href="#" onclick="toggleModal('contacto')" class="hover:text-accent">Contacto</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Lógica de Filtrado -->
+    <div id="modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-dark/90 backdrop-blur-sm">
+        <div class="bg-card border border-white/10 p-8 rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div id="modalContent" class="text-slate-300 text-sm leading-relaxed">
+                </div>
+            <button onclick="toggleModal()" class="mt-8 bg-accent text-white w-full py-3 rounded-xl font-bold">Cerrar</button>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
         
+        // Lógica de Filtrado
         const buttons = document.querySelectorAll('.category-pill');
         const cards = document.querySelectorAll('.ai-card');
         const searchBar = document.getElementById('searchBar');
@@ -233,32 +156,37 @@
         function filterContent() {
             const activeCat = document.querySelector('.category-pill.active').dataset.cat;
             const searchText = searchBar.value.toLowerCase();
-
             cards.forEach(card => {
-                const cardCat = card.dataset.category;
-                const cardTitle = card.dataset.title.toLowerCase();
-                const matchesCat = (activeCat === 'all' || cardCat.includes(activeCat));
-                const matchesSearch = cardTitle.includes(searchText);
-
-                if (matchesCat && matchesSearch) {
-                    card.classList.remove('hidden-filter');
-                    card.style.opacity = '1';
-                } else {
-                    card.classList.add('hidden-filter');
-                    card.style.opacity = '0';
-                }
+                const matchesCat = (activeCat === 'all' || card.dataset.category.includes(activeCat));
+                const matchesSearch = card.dataset.title.toLowerCase().includes(searchText);
+                card.classList.toggle('hidden-filter', !(matchesCat && matchesSearch));
             });
         }
 
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                buttons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                filterContent();
-            });
-        });
-
+        buttons.forEach(btn => btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterContent();
+        }));
         searchBar.addEventListener('input', filterContent);
+
+        // Lógica de Modales Legales
+        function toggleModal(type) {
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modalContent');
+            if (type === 'privacidad') {
+                content.innerHTML = `<h2 class="text-2xl font-bold text-white mb-4">Política de Privacidad</h2>
+                <p>En IAMUNDO, accesible desde aspitos-pixel.github.io, la privacidad de nuestros visitantes es una prioridad. Este documento describe los tipos de información que recopilamos.</p>
+                <p class="mt-4 font-bold text-accent italic">Google AdSense:</p>
+                <p>Utilizamos cookies de terceros (como Google) para servir anuncios basados en sus visitas previas a este sitio web. Puede optar por no recibir publicidad personalizada visitando la configuración de anuncios de Google.</p>`;
+            } else if (type === 'contacto') {
+                content.innerHTML = `<h2 class="text-2xl font-bold text-white mb-4">Contacto</h2>
+                <p>Para consultas legales o publicitarias, puede contactarnos a través de:</p>
+                <p class="mt-4 font-bold text-accent">email: soporte@mundoia.com (ejemplo)</p>
+                <p class="mt-2 text-slate-500">Respondemos en menos de 48 horas.</p>`;
+            }
+            modal.classList.toggle('hidden');
+        }
     </script>
 </body>
 </html>
