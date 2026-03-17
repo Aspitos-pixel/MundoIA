@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Básico -->
+    <title>IA Match | Encuentra la mejor IA para escribir, programar o diseñar</title>
+    <meta name="description" content="¿No sabes qué IA utilizar? Guía completa para encontrar la mejor IA para cada ocasión: redactar textos, generar imágenes, programar código y más.">
+    <meta name="keywords" content="mejor IA para escribir, mejor IA para programar, mejor IA para diseño, buscador de inteligencia artificial, directorio de IA 2026">
+    
+    <!-- Open Graph (Para redes sociales) -->
+    <meta property="og:title" content="IA Match - Directorio Maestro de Inteligencia Artificial">
+    <meta property="og:description" content="Descubre cuál es la mejor IA para tus tareas diarias en este directorio actualizado.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        dark: '#050a15',
+                        card: '#0f172a',
+                        accent: '#6366f1',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050a15; color: #f8fafc; scroll-behavior: smooth; }
+        .ai-card.hidden-filter { display: none !important; }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .category-pill.active { background-color: #6366f1; color: white; border-color: #6366f1; }
+        .gradient-border {
+            position: relative;
+            border-radius: 1rem;
+            background: rgba(15, 23, 42, 1);
+            padding: 1px;
+        }
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(45deg, #6366f1, #a855f7, #ec4899);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .ai-card:hover.gradient-border::before { opacity: 1; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navegación -->
+    <nav class="glass sticky top-0 z-50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-accent p-2 rounded-lg">
+                    <i data-lucide="zap" class="text-white w-5 h-5"></i>
+                </div>
+                <p class="text-xl font-extrabold tracking-tight">IA<span class="text-accent">MUNDO</span></p>
+            </div>
+            
+            <div class="relative hidden md:block w-96">
+                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 w-4 h-4"></i>
+                <input type="text" id="searchBar" placeholder="Ej: mejor IA para escribir..." 
+                       class="w-full bg-slate-900 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-accent transition">
+            </div>
+
+            <div class="flex gap-4 items-center">
+                <button class="bg-white text-dark px-5 py-2 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition">Comunidad</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Optimizado SEO con H1 -->
+    <header class="py-16 px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            ¿Cuál es la <span class="text-accent italic">mejor IA para</span> cada tarea?
+        </h1>
+        <h2 class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            Tu guía definitiva para saber <strong>qué Inteligencia Artificial utilizar</strong> según tu objetivo. Directorio curado y actualizado para maximizar tu productividad.
+        </h2>
+    </header>
+
+    <!-- Categorías -->
+    <div class="max-w-7xl mx-auto px-6 mb-12">
+        <div class="flex flex-wrap justify-center gap-2" id="category-container">
+            <button data-cat="all" class="category-pill active px-4 py-2 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap">Todas las Herramientas</button>
+            <button data-cat="texto" class="category-pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Mejor IA para Texto</button>
+            <button data-cat="imagen" class="category-pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Mejor IA para Imagen</button>
+            <button data-cat="video" class="category-pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Video & Animación</button>
+            <button data-cat="codigo" class="category-pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Programación</button>
+            <button data-cat="productividad" class="category-pill px-4 py-2 rounded-full border border-white/10 text-sm font-medium transition whitespace-nowrap hover:border-accent">Productividad</button>
+        </div>
+    </div>
+
+    <!-- Directorio -->
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="ai-grid">
+            
+            <!-- ChatGPT -->
+            <article class="ai-card gradient-border" data-category="texto" data-title="ChatGPT">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl"><i data-lucide="message-circle"></i></div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Popular</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ChatGPT (OpenAI)</h3>
+                    <p class="text-slate-400 text-sm mb-6">La <strong>mejor IA para</strong> chatear, redactar borradores rápidos y asistencia general multiusos.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-xs text-slate-300 bg-white/5 p-2 rounded-lg">
+                            <i data-lucide="check-circle" class="w-3 h-3 text-emerald-400"></i>
+                            <span>Redacción creativa y respuestas rápidas</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Midjourney -->
+            <article class="ai-card gradient-border" data-category="imagen" data-title="Midjourney">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl"><i data-lucide="palette"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Midjourney</h3>
+                    <p class="text-slate-400 text-sm mb-6">Considerada la <strong>mejor IA para</strong> generar arte digital y fotografías fotorrealistas de alta calidad.</p>
+                    <div class="flex items-center gap-2 text-xs text-slate-300 bg-white/5 p-2 rounded-lg">
+                        <i data-lucide="check-circle" class="w-3 h-3 text-purple-400"></i>
+                        <span>Ilustraciones y diseño conceptual</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Claude -->
+            <article class="ai-card gradient-border" data-category="texto codigo" data-title="Claude">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-orange-500/10 text-orange-400 rounded-xl"><i data-lucide="brain"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Claude (Anthropic)</h3>
+                    <p class="text-slate-400 text-sm mb-6">La <strong>mejor IA para</strong> procesar archivos largos, programación y escritura con tono humano.</p>
+                    <div class="flex items-center gap-2 text-xs text-slate-300 bg-white/5 p-2 rounded-lg">
+                        <i data-lucide="check-circle" class="w-3 h-3 text-orange-400"></i>
+                        <span>Análisis de datos y código limpio</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Perplexity -->
+            <article class="ai-card gradient-border" data-category="investigacion" data-title="Perplexity">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl"><i data-lucide="globe"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Perplexity AI</h3>
+                    <p class="text-slate-400 text-sm mb-6">La <strong>mejor IA para</strong> investigar en internet con fuentes citadas y datos en tiempo real.</p>
+                    <div class="flex items-center gap-2 text-xs text-slate-300 bg-white/5 p-2 rounded-lg">
+                        <i data-lucide="check-circle" class="w-3 h-3 text-blue-400"></i>
+                        <span>Búsqueda de información verificada</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-white/5 py-10 glass">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-slate-500 text-sm">IA Mundo 2026 - Tu guía de confianza sobre qué IA utilizar hoy.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const buttons = document.querySelectorAll('.category-pill');
+        const cards = document.querySelectorAll('.ai-card');
+        const searchBar = document.getElementById('searchBar');
+
+        function filterContent() {
+            const activeCat = document.querySelector('.category-pill.active').dataset.cat;
+            const searchText = searchBar.value.toLowerCase();
+
+            cards.forEach(card => {
+                const cardCat = card.dataset.category;
+                const cardTitle = card.dataset.title.toLowerCase();
+                const matchesCat = (activeCat === 'all' || cardCat.includes(activeCat));
+                const matchesSearch = cardTitle.includes(searchText);
+
+                if (matchesCat && matchesSearch) card.classList.remove('hidden-filter');
+                else card.classList.add('hidden-filter');
+            });
+        }
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterContent();
+            });
+        });
+        searchBar.addEventListener('input', filterContent);
+    </script>
+</body>
+</html>
